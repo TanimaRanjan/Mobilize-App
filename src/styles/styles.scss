@@ -3,5 +3,6 @@
 @import "./base/base";
 @import './components/_header.scss';
 @import './components/_loader.scss';
-@import './components/content-container';
-@import './components/item';
+@import './components/_content-container';
+@import './components/_event';
+@import './components/_footer';

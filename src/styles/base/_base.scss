@@ -30,8 +30,8 @@ $steel-blue:#364051;
 $blue:#3c4251;
 $light-blue:#464b5e;
 $lite-blue:#1c88bf;
-$dark-grey:#333;
-$grey:#666;
+$dark-grey:#666;
+$grey:#fafafa;
 
 
 
@@ -43,21 +43,22 @@ $grey:#666;
 
 
   html {
-    // Makes rem calculation easier. 
-    // 1rem = 10px
-    // font-size:62.5%; 
-    // overflow-x: hidden;
-    // @media only screen and (max-width: $bp-large) {
-    //     font-size: 60%;
-    // }
-    // @media only screen and (max-width: $bp-small) {
-    //     font-size: 50%;
-    // }
+    //Makes rem calculation easier. 
+    //1rem = 10px
+    font-size:62.5%; 
+    //overflow-x: hidden;
+    @media only screen and (max-width: $bp-large) {
+        font-size: 60%;
+    }
+    @media only screen and (max-width: $bp-small) {
+        font-size: 50%;
+    }
       scroll-behavior: smooth;
   }
   
 
 body {
+  position: relative;
     margin: 0;
     padding:0;
     font-family: 'Lato', sans-serif;
@@ -72,3 +73,25 @@ a {
     cursor: pointer;
   }
 }
+
+button {
+  border:none;
+  text-decoration: none;
+  }
+
+  h1 {
+    font-size:$l-size;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size:$m-size;
+  }
+
+  h3 {
+    font-size:$s-size;
+  }
+
+  p {
+    font-size:$xs-size;
+  }
