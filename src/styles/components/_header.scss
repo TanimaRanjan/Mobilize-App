@@ -2,9 +2,15 @@
     
     &__content {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-content: center;
         padding: $m-size;
+
+        @media only screen and (max-width:$bp-small) {
+            // flex-direction: column;
+            justify-self: start;
+        
+       }
     }
     &__title {
         color:rgba(101,101,101,1);

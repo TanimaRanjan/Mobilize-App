@@ -6,6 +6,14 @@ const EventItem = ({event}) => {
 
     return (
         <Link className='event' to={`/event/${event.id}`}>
+        <img 
+        className='event__image' 
+        width='100px' height='100px' 
+        alt={event.title}
+        src={event.featured_image_url} 
+        onError={(ev) => {ev.target.src ='/images/error.png'}}
+        />
+      
             <div className='event__item'>
             <h2 className='event__title'>{event.title}</h2>
             <p className='event__type sub'>{event.event_type}</p>
@@ -16,13 +24,6 @@ const EventItem = ({event}) => {
             <p>Location Unknown</p> */}
             <button className='event__cta'>See details</button>
             </div>
-              <img 
-             className='event__image' 
-             width='100px' height='100px' 
-             alt={event.title}
-             src={event.featured_image_url} 
-             onError={(ev) => {ev.target.src ='/images/error.png'}}
-             />
            
              
         </Link>

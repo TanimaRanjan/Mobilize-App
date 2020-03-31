@@ -44,8 +44,9 @@ const EventDetailPage = (props) => {
         <React.Fragment>
         <Header />
         <div className='content-container'>
-            <button type="button" className='event__cta' onClick={handleClick}>Back</button>  
+            
             <div className='event__item' >
+            <button type="button" className='event__cta' onClick={handleClick}>Back</button> 
                 <h1 className='event__title-l'>{event.title}</h1>
                 <h2 className='event__type'>{event.event_type}</h2>
                 <h2 className='event__category'>{event.category}</h2>

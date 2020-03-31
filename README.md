@@ -79,10 +79,7 @@ This can be improved by either pulling the data sorted from the API.
 3. If location object is not available with lat and lng them no map is displayed. I would get location from address and show difault map
 4. Would add better CSS for events detail page 
 5. I noticed that sometime map is in middle of water, assuming due to test data. 
-
-
-
-
+6. Would improve the responsiveness of the application. Currently site will only look good on desktop. I added breakpoint values to continue improving the site.
 
 
 

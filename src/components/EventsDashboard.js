@@ -36,8 +36,9 @@ const EventsDashboard = (props) => {
     //console.log(sortedEvents)
    
     return (
-        <div className='content-container'>
+        <React.Fragment>
         <Header />
+        <div className='content-container'>
 
         {events && events.length > 0 && events.map((event, index) => {
 
@@ -64,6 +65,7 @@ const EventsDashboard = (props) => {
             <Link to ='/'><p>No Data Loaded. Click to refresh</p></Link>
         )}
         </div>
+        </React.Fragment>
     )
 }
 

@@ -4,13 +4,23 @@
     border: 1px solid darken($off-white, 7%);
     color: black;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     padding: $s-size $m-size;
-     margin-bottom:$s-size;
+    margin-bottom:$s-size;
+
+     @media only screen and (max-width:$bp-small) {
+         flex-direction: column;
+        // justify-content: ;
+    }
 
     &__item {
-       
         text-decoration: none;
+        margin-left:2rem;
+        @media only screen and (max-width:$bp-small) {
+            flex-direction: column;
+            margin-top:2rem;
+       }
+        
     }
 
     &__title-l {
@@ -19,11 +29,19 @@
     &__image {
        width:20rem;
        height: 100%;
+
+       @media only screen and (max-width:$bp-small) {
+            margin-top:2rem;
+            margin-left:2rem;
+        }
     }
 
     &__image-l {
         width:48rem;
         height: 100%;
+        @media only screen and (max-width:$bp-small) {
+            width:40rem;
+        }
     }
 
     &__cta {
