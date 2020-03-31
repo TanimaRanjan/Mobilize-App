@@ -10,7 +10,6 @@ export const fetchMoreEvents = (pageNo = 0, setEventData, history) => {
     fetch(`${PATH_BASE}?${PARAM_PAGE}${pageNo}${PARAM_TIMESLOT}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 let hasMore = (data.next==null) 
                 return setEventData(data.data, pageNo, hasMore, history)
             })

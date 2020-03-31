@@ -47,9 +47,13 @@ The Application Runs on localhost:3000
 Local web server will uses standard React's port 3000. 
 
 Application uses Google Map API Key. 
+Please add .env file with REACT_APP_GOOGLE_KEY .env is present in .gitignore. 
 
-Please add .env file with REACT_APP_GOOGLE_KEY 
-.env is present in .gitignore. 
+```bash
+REACT_APP_GOOGLE_KEY=.....
+```
+
+
 
 npm run build - build into the build/ directory
 
@@ -66,10 +70,16 @@ More testing done manually.
 7. Location not provided - shows location unknown
 
 # Few comments on improvement
-Event list is sorted on 1st start time in time slow. 
+
+1. Event list is sorted on 1st start time in time slow. 
 Currently data pull from API is not sorted. When new data and added to the list it get sorted before listing. 
 If there is some event on next is earlier than events on last page it will get mixed in the list and no show up on bottom. 
 This can be improved by either pulling the data sorted from the API.
+2. Footer should added to the bottom of event details page
+3. If location object is not available with lat and lng them no map is displayed. I would get location from address and show difault map
+4. Would add better CSS for events detail page 
+5. I noticed that sometime map is in middle of water, assuming due to test data. 
+
 
 
 
