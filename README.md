@@ -58,10 +58,9 @@ npm run build - build into the build/ directory
 # Testing 
 Load the page and view the list of item. 
 
+
+Event list is sorted before display on start time
 Location not provided - shows location unknown
-
-Event timeslot not provide - shows timeslow not available 
-
 If unable to pull the event image then displays backup image 
 
 
