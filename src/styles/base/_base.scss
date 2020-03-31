@@ -1,0 +1,56 @@
+// Breakpoints for responsive design 
+$bp-largest:75em; 
+$bp-large:68.75em;
+$bp-medium:56.25em;
+$bp-small:768px;
+$bp-xsmall:31.25em; 
+
+// Variables for padding and margins
+$space-xs:4.8rem;
+$space-s:11rem;
+$space-m:15rem;
+
+// Max container width
+$max-width:120rem;
+
+// Font sizes 
+$xl-size:4.8rem;
+$l-size:3.2rem;
+$m-size:2rem;
+$s-size: 1.8rem;
+$xs-size:1.6rem;
+$xxs-size:1.4rem;
+
+
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+  }
+
+
+  html {
+    // Makes rem calculation easier. 
+    // 1rem = 10px
+    // font-size:62.5%; 
+    // overflow-x: hidden;
+    // @media only screen and (max-width: $bp-large) {
+    //     font-size: 60%;
+    // }
+    // @media only screen and (max-width: $bp-small) {
+    //     font-size: 50%;
+    // }
+      scroll-behavior: smooth;
+  }
+  
+
+body {
+    margin: 0;
+    padding:0;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: auto;
+  }
+

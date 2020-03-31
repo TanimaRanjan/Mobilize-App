@@ -40,7 +40,7 @@ Clone this repo
 ```bash
 npm install  
 ```
-    -- to install all required dependencies 
+to install all required dependencies 
 ```bash
 npm start
 ``` 
