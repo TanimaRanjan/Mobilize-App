@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { fetchMoreEvents } from '../utils/utils'
+import { setEventsData } from '../actions/eventsAction'
+import { connect } from 'react-redux'
+import Header from './Header'
+import LoadingPage from './LoadingPage'
 
-function App() {
+function App(props) {
+
+  useEffect(() => {
+    fetchMoreEvents(1, props.setEventsData, props.history)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-          MOBILIZE
-      </header>
+    <div className="App content-container">
+     <Header />
+     <LoadingPage />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = ({events}) => ({
+  pageNo:events.pageNo
+})
+
+export default connect(mapStateToProps, {setEventsData})(App);
