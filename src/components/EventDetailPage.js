@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import Header from './Header'
@@ -12,6 +12,12 @@ const EventDetailPage = (props) => {
     }
 
 
+    // Scroll To top
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    
+
     const getLocation = (location) => {
 
         let address = ''
@@ -23,10 +29,11 @@ const EventDetailPage = (props) => {
             let locality = location.locality + ' ' || ''
             let region =  location.region + ' '|| ''
             let country = location.country + ' '|| ''
-            let postalCode = location.postalCode+ ' ' || ''
+            let postalCode = location.postalCode + ' ' || ''
+            postalCode = postalCode=='undefined '? '' : postalCode
              address = venue + addressLine + locality + region + country + postalCode
         } else { 
-            address='Location unknown'
+            address='Location Unknown'
         }
         
         return address
@@ -37,40 +44,44 @@ const EventDetailPage = (props) => {
         <React.Fragment>
         <Header />
         <div className='content-container'>
-            <button type="button" onClick={handleClick}>Back</button>  
+            <button type="button" className='event__cta' onClick={handleClick}>Back</button>  
             <div className='event__item' >
-            <h1 className='event__title'>{event.title} </h1>
-            <h2 className='event__type'>{event.event_type}</h2>
-            <h2>{event.category}</h2>
+                <h1 className='event__title-l'>{event.title}</h1>
+                <h2 className='event__type'>{event.event_type}</h2>
+                <h2 className='event__category'>{event.category}</h2>
 
-            <img 
-                className='event__image-l' 
-                width='100px' height='100px' 
-                alt={event.title}
-                src={event.featured_image_url} 
-                onError={(ev) => {ev.target.src ='/images/error.png'}}
-            />
+                <img 
+                    className='event__image-l' 
+                    width='100px' height='100px' 
+                    alt={event.title}
+                    src={event.featured_image_url} 
+                    onError={(ev) => {ev.target.src ='/images/error.png'}}
+                />
 
-            <p className='event__location'>{getLocation(event.location)}</p>
+                <p className='event__location'>{getLocation(event.location)}</p>
 
-            <p className='event__desc'>{event.description}</p>
-            <p className='event_summary'>{event.summary}</p> 
-            {event.timeslots.length > 0 && 
-                event.timeslots.map((timeslot) => (
-                    <p className='event_starttime' key={timeslot.id}>
-                    { moment.unix(timeslot.start_date)
-                     .format('ddd, MMM Do, YYYY h:mm A')}-
-                     { moment.unix(timeslot.end_date)
-                        .format('h:mm A')}
-                     </p>
-                ))
-            }
+                <p className='event__desc sub'>{event.description}</p>
+                <p className='event__summary sub'>{event.summary}</p> 
+                {event.timeslots.length > 0 && <p>Available times</p>}
+                {event.timeslots.length > 0 && 
+                    event.timeslots
+                    .filter((item, index) => index<10)
+                    .map((timeslot) => (
+                        <p className='event__starttime sub' key={timeslot.id}>
+                        { moment.unix(timeslot.start_date)
+                        .format('ddd, MMM Do, YYYY h:mm A')}-
+                        { moment.unix(timeslot.end_date)
+                            .format('h:mm A')}
+                        </p>
+                    ))
+                }
 
-            {event.location && event.location.location && 
-                <EventMap location={event.location.location}/>
-            }
+                {event.location && event.location.location && 
+                    <EventMap location={event.location.location}/>
+                }
            </div>
         </div>
+   
         </React.Fragment>
         )
 }
