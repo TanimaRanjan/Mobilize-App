@@ -1,0 +1,17 @@
+.header {
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: $m-size;
+    }
+    &__title {
+        color:rgba(101,101,101,1);
+        text-decoration:none;
+        h1 {
+            margin:0;
+        }
+
+    }
+}

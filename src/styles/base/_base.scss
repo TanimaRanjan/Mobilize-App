@@ -21,6 +21,18 @@ $s-size: 1.8rem;
 $xs-size:1.6rem;
 $xxs-size:1.4rem;
 
+// Colors 
+$off-black:#20222b;
+$off-white:#f7f7f7;
+// #a5afd7;
+$dark-blue:#333745;
+$steel-blue:#364051;
+$blue:#3c4251;
+$light-blue:#464b5e;
+$lite-blue:#1c88bf;
+$dark-grey:#333;
+$grey:#666;
+
 
 
 * {
@@ -54,3 +66,9 @@ body {
     overflow: auto;
   }
 
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

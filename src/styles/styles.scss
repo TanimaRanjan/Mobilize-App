@@ -1,3 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,600,700');
 
 @import "./base/base";
+@import './components/_header.scss';
+@import './components/_loader.scss';
+@import './components/content-container';
+@import './components/item';
