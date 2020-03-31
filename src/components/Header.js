@@ -5,7 +5,7 @@ const Header = () => (
     <header className='header'>
         <div className='content-container'>
             <div className='header__content' >
-                <h1 className='header__title'>MOBILIZE</h1>
+                <img className='header__logo' src='/images/Mobilize_logo.png' alt='Mobilize' />
             </div>
         </div>
     </header>

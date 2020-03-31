@@ -1,7 +1,8 @@
 import { 
     SET_EVENTS, 
     SET_PAGENO,
-    SET_ERROR
+    SET_ERROR,
+    SET_HASMORE
 } from '../actions/types'
 
 const initialState = {
@@ -21,6 +22,11 @@ const eventsReducer = (state=initialState, action) => {
                     ...state,
                     pageNo:action.payload
                 }
+        case SET_HASMORE: 
+            return {
+                ...state,
+                hasMore:action.payload
+            }
         default:
             return state
     }
