@@ -27,6 +27,11 @@ const eventsReducer = (state=initialState, action) => {
                 ...state,
                 hasMore:action.payload
             }
+        case SET_ERROR: 
+            return {
+                ...state,
+                error:action.payload
+            }
         default:
             return state
     }

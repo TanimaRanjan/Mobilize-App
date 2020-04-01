@@ -4,6 +4,7 @@ import App from '../components/App'
 import EventsDashboard from '../components/EventsDashboard'
 import EventDetailPage from '../components/EventDetailPage'
 import NotFoundPage from '../components/NotFoundPage'
+import ErrorPage from '../components/ErrorPage'
 import CustomRoute from '../router/CustomRoute'
 
 const createHistory = require('history').createBrowserHistory
@@ -15,6 +16,7 @@ const AppRouter = () => (
             <Route exact path='/' component={App} />
             <CustomRoute exact path='/events' component={EventsDashboard} />
             <Route path='/event/:id' component={EventDetailPage} />
+            <Route path='/error' component={NotFoundPage} />
             <Route component={NotFoundPage} />
         </Switch>    
     </Router>

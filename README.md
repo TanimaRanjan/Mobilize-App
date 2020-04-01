@@ -23,7 +23,7 @@ Back to home page will take you page to the home page with all the list history 
 HomePage (URL:/#/events) 
     * List all upcoming events
 
-Details Page (URL:/#/events/:id)
+Details Page (URL:/#/event/:id)
     * Display following details
         - Display Title and details of the selected event
         - Timeslots available for the event - filtered top 10. 

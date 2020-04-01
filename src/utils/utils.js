@@ -11,8 +11,10 @@ export const fetchMoreEvents = (pageNo = 0, setEventData, history) => {
             .then(response => response.json())
             .then(data => {
                 let hasMore = (data.next==null) 
-                return setEventData(data.data, pageNo, hasMore, history)
+                // Changing to send data as object containing all information. 
+                
+                return setEventData({events:data.data, pageNo, hasMore,error:null, history})
             })
-            .catch(error => error)
+            .catch(error =>   setEventData({data:null, pageNo:1, hasMore:false,error:error, history}))
   };
   

@@ -1,0 +1,15 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const ErrorPage = () => (
+
+    <div className='not_found'>
+        <h2 className='not_found_title'>Error<Link to ='/'>Go Home</Link></h2>
+        <img className='error__image' 
+        width= "100%"  height= "100%"
+        alt = 'Error'
+        src='/images/error.png' />
+    </div>
+)
+
+export default ErrorPage

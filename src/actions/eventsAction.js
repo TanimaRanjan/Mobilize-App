@@ -6,14 +6,22 @@ import {
 } from './types'
 
 
-export const setEventsData = (events, pageNo, hasMore, history) => dispatch => {
+export const setEventsData = ({events, pageNo, hasMore, error, history}) => dispatch => {
     
-    // Set Events 
-    dispatch(setEvents(events))
-    // Set Page No
-    dispatch(setPageNo(pageNo))
-    dispatch(setHasMore(hasMore))
-    history.push('/events')
+    console.log('error', error, events)
+    if(!error) {
+         // Set Events 
+         dispatch(setEvents(events))
+         // Set Page No
+         dispatch(setPageNo(pageNo))
+         dispatch(setHasMore(hasMore))
+         history.push('/events')
+       
+    } else {
+        dispatch(setError(error))
+        history.push('/error')  
+    }
+   
     
 }
 
@@ -37,6 +45,13 @@ export const setHasMore = (hasMore) => {
     return {
         type:SET_HASMORE,
         payload:hasMore
+    }
+}
+
+export const setError = (error) => {
+    return {
+        type:SET_HASMORE,
+        payload:error
     }
 }
 
